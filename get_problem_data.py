@@ -5,7 +5,7 @@ import browser_cookie3
 from bs4 import BeautifulSoup
 import sys
 
-problem = "67"
+problem = "69"
 
 print(f"Initializing problem {problem}")
 
@@ -26,8 +26,8 @@ if not os.path.isdir(f"problem{problem}"):
         t = t.replace('$','')
         t = t.replace(' gt ',' > ')
         t = t.replace(' lt ',' < ')
-        t = t.replace(' ge ',' >= ')
-        t = t.replace(' le ',' <= ')
+        t = t.replace(' geq ',' >= ')
+        t = t.replace(' leq ',' <= ')
 
 
 

@@ -58,18 +58,3 @@ row = len(input)-1
 # print(DP(input,row))
 print(max(DP(input,row)))
 # 7273 correct!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
