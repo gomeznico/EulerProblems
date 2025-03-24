@@ -32,7 +32,7 @@ def sieve_smallest_prime_factor(limit):
     for p in primes:
         # fill spf[i] with p for every multiple of p
         spf[p] = p
-        for multiple in range(p*p, limit, p):
+        for multiple in range(p*p, limit+1, p):
             spf[multiple] = p
     return spf
 
@@ -43,7 +43,7 @@ def prime_factors(n,spf):
         f = spf[num]
         out.add(f)
         num//=f
-    return out -set([n])
+    return out
 
 def phi(n):
     def cumProd(arr):

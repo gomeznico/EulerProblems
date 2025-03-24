@@ -55,7 +55,7 @@ def sieve_smallest_prime_factor(limit,primes):
     for p in primes:
         # fill spf[i] with p for every multiple of p
         spf[p] = p
-        for multiple in range(p*p, limit, p):
+        for multiple in range(p*p, limit+1, p):
             spf[multiple] = p
     return spf
 
@@ -66,26 +66,13 @@ def prime_factors(n,spf):
         f = spf[num]
         out.add(f)
         num//=f
-    return out -set([n])
-
-
-
-
-
+    return out
 
 def is_reduced_frac(num,den,spf):
     # if reduced fraction, prime factors of num and den will be different
     pf1 = prime_factors(num,spf)
     pf2 = prime_factors(den,spf)
     return pf1.intersection(pf2) == set()
-
-
-
-    pass
-
-
-
-
 
 def solve(limit):
 
