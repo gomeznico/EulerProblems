@@ -5,7 +5,7 @@ import browser_cookie3
 from bs4 import BeautifulSoup
 import sys
 
-problem = "75"
+problem = "82"
 
 print(f"Initializing problem {problem}")
 

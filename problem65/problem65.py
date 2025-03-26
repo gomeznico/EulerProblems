@@ -22,9 +22,7 @@ Find the sum of digits in the numerator of the 100th convergent of the continued
 from math import sqrt, gcd
 
 def get_convergence_fractions(first_term,arr):
-
     fractions = []
-    ## go in reverse
     for i,a in enumerate(arr):
         num = 1
         den = a
