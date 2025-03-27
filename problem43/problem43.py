@@ -40,4 +40,4 @@ for num in arr:
         print(num)
         checksum+=int(num)
 print(checksum)
-
+# 16695334890
