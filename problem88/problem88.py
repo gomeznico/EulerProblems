@@ -138,11 +138,11 @@ def solve(max_k):
             spf = sieve_smallest_prime_factor(curr_limit,primes)
             print(f'increased spf table to {curr_limit}')
         if n%1_000==0:
-            print(f"checked n up to {n}, max_found k is k={max(keys)}")
+            print(f"checked n up to {n:_}, max_found k is k={max(keys):_}")
 
 
     e = time.time()
-    print(f"{checksum} is sum of all min_prod_sums for k<= {max_k} found in {e-s:f} seconds")
+    print(f"{checksum} is sum of all min_prod_sums for k<= {max_k:_} found in {e-s:f} seconds")
 
 
 # solve(6)
@@ -153,17 +153,17 @@ def solve(max_k):
 # solve(12_000)
 # solve(20_000)
 
-# 30 is sum of all min_prod_sums for k<= 6 found in 0.000070 seconds
-# 61 is sum of all min_prod_sums for k<= 12 found in 0.000088 seconds
 # 2061 is sum of all min_prod_sums for  k<=   100 found in 0.002207 seconds
-# 93063 is sum of all min_prod_sums for k<=   1000 found in 0.318752 seconds
-# 5441890 is sum of all min_prod_sums for k<= 10000 found in 66.484353 seconds
-# 7587457 is sum of all min_prod_sums for k<= 12000 found in 113.578494 seconds
-# 18858239 is sum of all min_prod_sums for k<= 20000 found in 455.751629 seconds
+# 93063 is sum of all min_prod_sums for k<=   1_000 found in 0.318752 seconds
+# 5441890 is sum of all min_prod_sums for k<= 10_000 found in 66.484353 seconds
+# 7587457 is sum of all min_prod_sums for k<= 12_000 found in 113.578494 seconds
+# 18858239 is sum of all min_prod_sums for k<= 20_000 found in 455.751629 seconds
+# time complexity is ~O(n^2) x10 input -> x100runtime
 
 
 ## method2 to get other prod/sum arrays
 # much much faster since factorizations based on divisors of n, rather than all combos of multiplying prime factors
+# dynamic programming approach
 
 def possible_factorizations(orig_n, n, Prod:int=1, Sum:int=0, count:int=0, memo = {}):
     """
@@ -225,26 +225,28 @@ def solveV2(max_k):
             break
 
         n+=1
-        if n%1_000==0:
-            print(f"checked n up to {n}, max_found k is k={max(keys)}")
+        if n%10_000==0:
+            print(f"checked n up to {n:_}, max_found k is k={max(keys):_}")
 
     e = time.time()
-    print(f"{checksum} is sum of all min_prod_sums for k<= {max_k} found in {e-s:f} seconds")
+    print(f"{checksum} is sum of all min_prod_sums for k<= {max_k:_} found in {e-s:f} seconds")
 
 n=12
 print(possible_factorizations(n,n))
 
-solveV2(6)
-solveV2(12)
-solveV2(100)
-solveV2(1_000)
-solveV2(10_000)
-solveV2(12_000)
-solveV2(20_000)
-# 30 is sum of all min_prod_sums for k<= 6 found in 0.000041 seconds
-# 61 is sum of all min_prod_sums for k<= 12 found in 0.000458 seconds
+# solveV2(6)
+# solveV2(12)
+# solveV2(100)
+# solveV2(1_000)
+# solveV2(10_000)
+# solveV2(12_000)
+# solveV2(20_000)
 # 2061 is sum of all min_prod_sums for k<= 100 found in 0.001903 seconds
-# 93063 is sum of all min_prod_sums for k<= 1000 found in 0.119677 seconds
-# 5441890 is sum of all min_prod_sums for k<= 10000 found in 8.268610 seconds
-# 7587457 is sum of all min_prod_sums for k<= 12000 found in 9.774260 seconds
-# 18858239 is sum of all min_prod_sums for k<= 20000 found in 31.402883 seconds
+# 93063 is sum of all min_prod_sums for k<= 1_000 found in 0.119677 seconds
+# 5441890 is sum of all min_prod_sums for k<= 10_000 found in 8.268610 seconds
+# 7587457 is sum of all min_prod_sums for k<= 12_000 found in 9.774260 seconds
+# 18858239 is sum of all min_prod_sums for k<= 20_000 found in 31.402883 seconds
+#
+
+# time complexity is ~O(n^1.8) x10 input -> x65runtime
+# not quite quadratic, more than linear
