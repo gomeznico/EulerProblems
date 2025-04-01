@@ -105,7 +105,6 @@ def evaluate_expression(digits, operators, parenth):
     # all nested parenth. evaluated.  only 1 digit left
     return new_digits[0]
 
-
 def eval_terms_in_parenth(digits,operators):
 
     pair_priorities = [1]*len(operators)
@@ -141,7 +140,6 @@ def eval_terms_in_parenth(digits,operators):
                 break
     return new_digits[0]
 
-
 def evaluate_pair(pair,op):
     a,b = pair
     if op == '-':
@@ -154,7 +152,6 @@ def evaluate_pair(pair,op):
         return float(a)/float(b)
     if b == 0:
         return None
-
 
 def solve(n:int):
     s = time.time()
@@ -222,7 +219,7 @@ def solve(n:int):
 
 ## Method2:
 """
-instead of evaluating every nested version parnthesis, just check every order of evaluating pairs of digits
+instead of evaluating every nested version parenthesis, just check every order of evaluating pairs of digits
 4 terms a,b,c,d
 -> ab  bc  dc first ->
 -> simplifies to arr of 3 terms:
@@ -230,7 +227,7 @@ x,y,z
 -> xy yz
 simplifies to 2 term array
 -> 6 possible orderings of doing pairs of numbers per order of permutation of abcd and operators
- use recursion method
+ use recursion
  """
 
 
@@ -255,7 +252,6 @@ def evaluateV2(digits, operations):
         else:
             vals += evaluateV2(new_digits,new_ops)
     return vals
-
 
 def solveV2(n):
     s = time.time()
